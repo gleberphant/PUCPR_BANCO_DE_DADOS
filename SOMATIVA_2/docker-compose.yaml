@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: meu_mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: sua_senha_root
+      MYSQL_USER: seu_usuario
+      MYSQL_PASSWORD: sua_senha
+      MYSQL_DATABASE: seu_banco_de_dados
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
